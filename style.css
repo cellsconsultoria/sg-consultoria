@@ -1,0 +1,162 @@
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ------------------------------- */
+/* Cabeçalho fixo */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+header.mostrar {
+  opacity: 1;
+}
+
+header .logo-pequeno img {
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+header nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+header nav a {
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #007bff;
+}
+
+/* ------------------------------- */
+/* Logo animado */
+.logo-animado {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 2000;
+  transition: all 3.5s ease-in-out;
+}
+
+.logo-animado img {
+  width: 700px;
+  height: auto;
+  max-width: 90%;
+}
+
+/* Quando o logo vai para o canto */
+.logo-animado.mover {
+  top: 25px;
+  left: 40px;
+  transform: translate(0, 0) scale(0.25);
+}
+
+/* ------------------------------- */
+/* Conteúdo */
+.oculto {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#conteudo {
+  opacity: 0;
+  transition: opacity 1.5s ease-in;
+  padding-top: 120px;
+}
+
+/* ------------------------------- */
+/* Seções */
+.etapa {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.etapa h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.etapa p,
+.etapa li {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.etapa ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Cores alternadas */
+.etapa1 { background: #ffffff; }
+.etapa2 { background: #f9f9f9; }
+.etapa3 { background: #eef2f3; }
+.etapa4 { background: #e3e7eb; }
+.etapa5 { background: #dde3e8; }
+
+/* ------------------------------- */
+/* Vídeo responsivo */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.video-container video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------- */
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #333;
+  color: white;
+  font-size: 14px;
+}
+
+/* ------------------------------- */
+/* WhatsApp piscando */
+header nav a[href*="wa.me"] {
+  color: #25D366;
+  animation: piscar 1s infinite alternate;
+}
+
+@keyframes piscar {
+  from { opacity: 1; }
+  to { opacity: 0.6; }
+}
