@@ -8,9 +8,10 @@ window.addEventListener("load", () => {
     logo.classList.add("mover");
   }, 1000);
 
-  // Mostra o cabeçalho e o conteúdo suavemente
+  // Depois que a animação terminar (aqui 4.5s), remove "oculto" e mostra o header
   setTimeout(() => {
-    header.classList.add("mostrar");
+    header.classList.remove("oculto");   // <- remove a classe que estava escondendo
+    header.classList.add("mostrar");     // <- adiciona classe que faz o fade-in
     conteudo.style.opacity = "1";
   }, 4500);
 });
